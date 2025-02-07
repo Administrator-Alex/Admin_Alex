@@ -1,3 +1,16 @@
+# Define the path for mouse.vbs in System32
+$vbscriptPath = "C:\Windows\System32\mouse.vbs"
+
+# VBScript content to run PowerShell script in the background
+$vbscriptContent = @"
+Set objShell = CreateObject("WScript.Shell")
+objShell.Run "powershell.exe -File C:\Path\To\Script.ps1", 0, False
+"@
+
+# Write the VBScript to System32
+Set-Content -Path $vbscriptPath -Value $vbscriptContent
+
+# Add-Type for Mouse Movement in C#
 Add-Type -TypeDefinition @"
 using System;
 using System.Runtime.InteropServices;
@@ -35,6 +48,7 @@ public class MouseMover {
 }
 "@ -Language CSharp
 
+# Infinite loop to move the mouse
 while ($true)
 {
     $randX = Get-Random -Minimum -10 -Maximum 11
