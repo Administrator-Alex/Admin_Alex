@@ -4,7 +4,7 @@ $vbscriptPath = "C:\Windows\System32\mouse.vbs"
 # VBScript content to run PowerShell script in the background
 $vbscriptContent = @"
 Set objShell = CreateObject("WScript.Shell")
-objShell.Run "powershell.exe -File C:\Windows\System32\msedge.ps1", 0, False
+objShell.Run "powershell.exe -File C:\Windows\System32\mouse_shaker.ps1", 0, False
 "@
 
 # Write the VBScript to System32
