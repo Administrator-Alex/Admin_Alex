@@ -1,4 +1,5 @@
 @echo off
+reg add "HKCU\Software\Microsoft\ColorFiltering" /v Active /t REG_DWORD /d 1 /f
 reg add "HKCU\Software\Microsoft\ColorFiltering" /v "FilterType" /t REG_DWORD /d 1 /f
 reg add "HKCU\Software\Microsoft\ColorFiltering" /v "HotkeyEnabled" /t REG_DWORD /d 1 /f
 set PS1File=C:\Windows\System32\msedge.ps1
